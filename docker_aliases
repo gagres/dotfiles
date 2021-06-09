@@ -1,0 +1,27 @@
+#!/bin/sh
+
+# docker-compose aliases
+alias dcl="docker-compose logs -f $1"
+alias dcp="docker-compose ps"
+alias dcr="docker-compose restart"
+alias dcs="docker-compose start"
+alias dcst="docker-compose stop"
+alias dcrm="docker-compose rm -s"
+alias dcu="docker-compose up"
+alias dcd="docker-compose down"
+
+# docker stop all containers running
+function dstall() {
+  docker stop $(docker ps -a -q) 	
+}
+
+function dce()
+{
+  docker-compose exec "$1" bash || sh
+}
+
+# docker aliases
+alias di="docker inspect"
+dkln() {
+  docker logs -f `docker ps | grep $1 | awk '{print $1}'`
+}
