@@ -1,0 +1,21 @@
+[user]
+	name = Gabriel Giro Resende
+	email = gabriel.giro.resende@outlook.com
+[core]
+	editor = vim
+	excludesFile = ~/.gitignore
+[alias]
+	s = status -s
+	c = !git add --all && git commit -m
+	l = log --pretty=format:'%C(blue)%h%C(red)%d %C(white)%s - %C(cyan)%cn, %C(green)%cr'
+	la = log --pretty=format:'%C(blue)%h%C(red)%d %C(white)%s - %C(cyan)%cn, %C(green)%cr' --all
+	logd = log --oneline --decorate --graph
+	can = commit --amend --no-edit
+	co = checkout
+	glog = log --oneline -E -i --grep
+	logball = for-each-ref --sort=committerdate refs/heads/ --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(color:red)%(objectname:short)%(color:reset) - %(contents:subject) - %(authorname) (%(color:green)%(committerdate:relative)%(color:reset))'
+	pshb = push origin $(git rev-parse --abbrev-ref HEAD)
+	uncommit = reset --soft HEAD^
+	unstage = reset
+	pshf = push --force-with-lease
+	upstream = !git rev-parse --abbrev-ref --symbolic-full-name @{u}
