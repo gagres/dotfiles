@@ -19,6 +19,9 @@ if [ ! -d "$HOME/.oh-my-zsh" ]; then
   sh /tmp/install.sh
 fi
 
+# Install last version of PHP and Composer
+source ~/.dotfiles/install/php.sh
+
 # Generate symlinks
 env RCRC=$HOME/.dotfiles/rcrc rcup
 rcup -v
