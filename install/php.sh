@@ -9,4 +9,4 @@ sudo add-apt-repository ppa:ondrej/php
 
 sudo apt update
 
-sudo apt install php8.0
+sudo apt-get -pp install php8.0
