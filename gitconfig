@@ -4,6 +4,7 @@
 [core]
 	editor = vim
 	excludesFile = ~/.gitignore
+	filemode = false
 [alias]
 	s = status -s
 	c = !git add --all && git commit -m
