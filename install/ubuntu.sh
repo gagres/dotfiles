@@ -1,7 +1,7 @@
 mkdir ~/bin
 
 # Repositories
-sudo add-apt-repository ppa:martin-frost/thoughtbot-rcm
+#sudo add-apt-repository ppa:martin-frost/thoughtbot-rcm
 
 # Download and install the key from Google Linux Repository
 wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
@@ -19,9 +19,6 @@ sudo apt-get -qq install rcm
 sudo apt-get -qq install tmux
 sudo apt-get -qq install vim
 sudo apt-get -qq install zsh
-
-# Snap Apps
-sudo snap install slack --classic
 
 # Docker
 sudo apt-get install -qq linux-image-extra-$(uname -r) # Recommended extra packages, which
