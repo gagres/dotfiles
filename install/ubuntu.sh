@@ -32,3 +32,7 @@ sudo apt-get -qq install docker-ce
 
 # Docker Compose
 sudo apt -qq install docker-compose
+
+# post-install docker
+sudo groupadd docker
+sudo usermod -aG docker $USER
