@@ -22,6 +22,9 @@ fi
 # Install last version of PHP and Composer
 source ~/.dotfiles/install/php.sh
 
+# Install last version of python
+source ~/.dotfiles/install/php.sh
+
 # Generate symlinks
 env RCRC=$HOME/.dotfiles/rcrc rcup
 rcup -v

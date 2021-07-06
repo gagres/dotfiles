@@ -36,3 +36,12 @@ sudo apt -qq install docker-compose
 # post-install docker
 sudo groupadd docker
 sudo usermod -aG docker $USER
+
+# pyenv
+curl -L https://raw.githubusercontent.com/yyuu/pyenv-installer/master/bin/pyenv-installer | bash
+pyenv update
+
+# pyenv requirements for building
+# https://github.com/pyenv/pyenv/wiki/Common-build-problems#requirements
+sudo apt-get install -y make build-essential libssl-dev zlib1g-dev libbz2-dev \
+  libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev libncursesw5-dev xz-utils
