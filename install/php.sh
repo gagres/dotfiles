@@ -1,15 +1,18 @@
-#!/bin/bash
+#!/bin/sh
 
-sudo apt-get -qq install lsb-release \
-  ca-certificates \
-  apt-transport-https \
-  software-properties-common
+kernelName="$(uname -s)"
 
-sudo add-apt-repository ppa:ondrej/php
+if [ "$kernelName" = "Linux" ]; then
+  # Install PHP only on Linux PCs
+  sudo apt-get -qq install lsb-release \
+    ca-certificates \
+    apt-transport-https \
+    software-properties-common
 
-sudo apt update
-
-sudo apt-get -qq install php8.0
+  sudo add-apt-repository ppa:ondrej/php
+  sudo apt update
+  sudo apt-get -qq install php8.0
+fi
 
 # Install last version of Composer (as shown here: https://getcomposer.org/doc/faqs/how-to-install-composer-programmatically.md)
 COMPOSER_PATH=/usr/local/bin
@@ -21,13 +24,11 @@ ACTUAL_CHECKSUM="$(php -r "echo hash_file('sha384', 'composer-setup.php');")"
 
 if [ "$EXPECTED_CHECKSUM" != "$ACTUAL_CHECKSUM" ]
 then
-    >&2 echo 'ERROR: Invalid installer checksum'
+    >&2 echo 'ERROR: Invalid installer checksum for composer'
     rm composer-setup.php
-    exit 1
 fi
 
 php composer-setup.php --quiet
 RESULT=$?
 sudo mv /tmp/composer.phar /usr/local/bin/composer
 rm composer-setup.php
-exit $RESULT
