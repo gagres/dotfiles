@@ -20,4 +20,4 @@ Run the installation script
 
 This script sets zsh as the default shell. Changes will be available next time you login.
 
-This repository was based on: @lidimayra
+This repository was based on: [lidimayra](https://github.com/lidimayra/dotfiles)
