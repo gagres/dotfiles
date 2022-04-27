@@ -1,7 +1,14 @@
 #!/bin/bash
 
-# Run script to install ubuntu packages
-source ~/.dotfiles/install/ubuntu.sh
+kernelName="$(uname -s)"
+
+if [ "$kernelName" = "Darwin" ]; then
+  # Update brew and install dependencies
+  brew update && brew bundle
+elif [ "$kernelName" = "Linux" ]; then
+  # Run script to install ubuntu packages
+  source ~/.dotfiles/install/ubuntu.sh
+fi
 
 # Clone Tmux Plugin Manager
 if [ ! -d "$HOME/.tmux/plugins" ]; then
@@ -23,7 +30,7 @@ fi
 source ~/.dotfiles/install/php.sh
 
 # Install last version of python
-source ~/.dotfiles/install/php.sh
+source ~/.dotfiles/install/python.sh
 
 # Generate symlinks
 env RCRC=$HOME/.dotfiles/rcrc rcup
