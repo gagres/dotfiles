@@ -1,5 +1,5 @@
 [user]
-	name = Gabriel Giro Resende
+	name = Gabriel
 	email = gabriel.giro.resende@outlook.com
 [core]
 	editor = vim
@@ -20,3 +20,5 @@
 	unstage = reset
 	pshf = push --force-with-lease
 	upstream = !git rev-parse --abbrev-ref --symbolic-full-name @{u}
+[init]
+	defaultBranch = main
