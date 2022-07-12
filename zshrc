@@ -36,3 +36,5 @@ if [ "$kernelName" = "Darwin" ]; then
 	# Brew path
 	export PATH=/opt/homebrew/bin:$PATH
 fi
+
+export PATH="/opt/homebrew/opt/openvpn/sbin:$PATH"
